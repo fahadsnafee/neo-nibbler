@@ -59,12 +59,12 @@ static class Sorting
         File.Move(temporary, SettingsPath, overwrite: true);
     }
 
-    public static Candidate[] Scan(string desktop, IEnumerable<Rule> rules)
+    public static Candidate[] ScanFiles(IEnumerable<string> paths, IEnumerable<Rule> rules)
     {
         var destinations = rules.ToDictionary(rule => rule.Extension, rule => rule.Folder,
             StringComparer.OrdinalIgnoreCase);
         var matches = new List<Candidate>();
-        foreach (string path in Directory.EnumerateFiles(desktop))
+        foreach (string path in paths)
         {
             if (!destinations.TryGetValue(Path.GetExtension(path), out string? folder)) continue;
             var file = new FileInfo(path);

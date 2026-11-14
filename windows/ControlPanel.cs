@@ -295,7 +295,7 @@ sealed class ControlPanel : Form
             {
                 string desktop = Sorting.Desktop;
                 string[] files = Directory.GetFiles(desktop);
-                return (files, Sorting.Scan(desktop, preferences.Rules));
+                return (files, Sorting.ScanFiles(files, preferences.Rules));
             });
 
             observed.IntersectWith(found);

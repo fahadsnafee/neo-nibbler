@@ -17,8 +17,8 @@ The scan follows your Windows Desktop location and checks files directly in that
 
 ## Build from source
 
-Install the .NET 10 SDK. In the windows folder, run:
+Install the .NET 10 SDK. The Slim edition requires the .NET 10 Desktop Runtime (x64). Use `WindowsPortable` as the publish profile for a compressed executable that includes the runtime. In the windows folder, run:
 
 ```powershell
-dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
+dotnet publish -c Release -p:PublishProfile=WindowsSlim
 ```
