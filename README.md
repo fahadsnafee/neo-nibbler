@@ -13,7 +13,7 @@ Right-click the droid icon in the Windows notification area for **Scan Desktop**
 3. **Auto-move matches** moves files with saved rules after the scan identifies them. With this option off, use **Move checked** in Settings after reviewing the list.
 4. **Watch Desktop** checks for new or changed matches in the background. With watching off, use **Scan Desktop** on demand. Both automatic options are off on first launch. Settings take effect on the next scan.
 
-The scan follows your Windows Desktop location and checks files directly in that folder. A numbered suffix protects existing files with the same name. Files modified between discovery and move are skipped. Settings are stored in %LOCALAPPDATA%\AstromechDesk.
+The scan follows your Windows Desktop location and checks files directly in that folder. A numbered suffix protects existing files with the same name. Files modified between discovery and move are skipped. Settings are stored in %LOCALAPPDATA%\NeoNibbler. Existing settings are copied over on first launch.
 
 ## Build from source
 
