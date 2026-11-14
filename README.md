@@ -15,7 +15,11 @@ Right-click the droid icon in the Windows notification area for **Scan Desktop**
 
 The scan follows your Windows Desktop location and checks files directly in that folder. A numbered suffix protects existing files with the same name. Files modified between discovery and move are skipped. Settings are stored in %LOCALAPPDATA%\NeoNibbler. Existing settings are copied over on first launch.
 
-## Build from source
+## macOS
+
+Neo Nibbler also has an Apple Silicon and Intel macOS port. See the [macOS build and setup instructions](macos/README.md).
+
+## Build for Windows from source
 
 Install the .NET 10 SDK. The Slim edition requires the .NET 10 Desktop Runtime (x64). Use `WindowsPortable` as the publish profile for a compressed executable that includes the runtime. In the windows folder, run:
 

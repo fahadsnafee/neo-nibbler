@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+  <key>CFBundleName</key><string>Neo Nibbler</string>
+  <key>CFBundleDisplayName</key><string>Neo Nibbler</string>
+  <key>CFBundleIdentifier</key><string>co.basrasite.neonibbler</string>
+  <key>CFBundleExecutable</key><string>NeoNibbler</string>
+  <key>CFBundlePackageType</key><string>APPL</string>
+  <key>CFBundleShortVersionString</key><string>1.0.0</string>
+  <key>CFBundleVersion</key><string>1</string>
+  <key>CFBundleIconFile</key><string>NeoNibbler.icns</string>
+  <key>LSMinimumSystemVersion</key><string>14.0</string>
+  <key>LSUIElement</key><true/>
+  <key>NSAppleEventsUsageDescription</key><string>Neo Nibbler uses Finder to locate desktop icons for file chasing and filename tooltips.</string>
+  <key>NSDesktopFolderUsageDescription</key><string>Neo Nibbler scans your Desktop for the extensions you configure.</string>
+</dict></plist>
