@@ -17,8 +17,8 @@ static class Sorting
     private const FileAttributes Excluded = FileAttributes.System | FileAttributes.Hidden |
         FileAttributes.ReparsePoint | FileAttributes.Directory | FileAttributes.Offline;
 
-    private static readonly string DataFolder = Path.Combine(
-        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "AstromechDesk");
+    private static readonly string LocalData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+    private static readonly string DataFolder = Path.Combine(LocalData, "NeoNibbler");
     private static string SettingsPath => Path.Combine(DataFolder, "settings.json");
 
     public static string Desktop => Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
@@ -36,10 +36,20 @@ static class Sorting
         return new Rule(extension, folder);
     }
 
-    public static Settings Load() => File.Exists(SettingsPath)
-        ? JsonSerializer.Deserialize<Settings>(File.ReadAllText(SettingsPath))
-            ?? throw new InvalidDataException("The settings file is empty.")
-        : new Settings([], true);
+    public static Settings Load()
+    {
+        if (File.Exists(SettingsPath)) return ReadSettings(SettingsPath);
+        string previous = Path.Combine(LocalData, "AstromechDesk", "settings.json");
+        if (!File.Exists(previous)) return new Settings([], true);
+
+        Settings settings = ReadSettings(previous);
+        Save(settings);
+        return settings;
+    }
+
+    private static Settings ReadSettings(string path) =>
+        JsonSerializer.Deserialize<Settings>(File.ReadAllText(path))
+        ?? throw new InvalidDataException("The settings file is empty.");
 
     public static void Save(Settings settings)
     {
